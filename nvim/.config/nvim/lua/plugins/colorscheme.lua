@@ -1,4 +1,5 @@
 -- colors
+-- require "vague".setup({})
 require "vague".setup({ transparent = true })
 vim.cmd("colorscheme vague")
 -- Pour enlever la couleur de fond de la statusline on peu aussi changer la couleur
