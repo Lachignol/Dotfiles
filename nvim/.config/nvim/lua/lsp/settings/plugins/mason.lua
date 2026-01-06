@@ -21,6 +21,7 @@ require("mason-tool-installer").setup({
 	"tinymist",
     },
     run_on_start = true,
+    auto_update = false,
 })
 
 require("mason-lspconfig").setup({

@@ -19,7 +19,7 @@ require('marks').setup({
   bookmark_8 = { sign = "8️⃣", virt_text = "8" },
   bookmark_9 = { sign = "9️⃣", virt_text = "9" },
   mappings = {
-    -- Optionnel : tes prefs
+    -- Optionnel : 
     next = "m]",
     prev = "m[",
     preview = "m:",

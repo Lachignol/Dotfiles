@@ -1,4 +1,3 @@
--- Charger et configurer snipe.nvim
 require('snipe').setup({
 ui = {
     position = 'center',

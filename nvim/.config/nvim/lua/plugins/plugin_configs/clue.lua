@@ -30,5 +30,8 @@ require('mini.clue').setup({
 	-- Options fenêtre (optionnel)
 	window = {
 		delay = 200, -- Affichage après 500ms
-	},
-})
+		config = {
+      			width = 'auto',
+			}
+		},
+		})

@@ -25,10 +25,10 @@ Config 💾
         .. "                                                   \n"
         .. "     hit any key to continue                       \n"
 
-require("mini.starter").setup({  -- ← "starter" au lieu de "stater"
+require("mini.starter").setup({  
   evaluate_single = false,
   items = nil,  -- Items par défaut (fichiers récents, sessions, etc.)
-  header = string.rep("\n", 2) .. logo .. "\n" .. additional_art,  -- Tu peux mettre un header stylé ici
+  header = string.rep("\n", 2) .. logo .. "\n" .. additional_art,
   footer = '',
   content_hooks = nil,
   no_scratch = false,

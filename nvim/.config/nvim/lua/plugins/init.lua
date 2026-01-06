@@ -1,5 +1,9 @@
 vim.pack.add({
+	-- Thèmes
 	{ src = "https://github.com/vague2k/vague.nvim" },
+	{ src = "https://github.com/scottmckendry/cyberdream.nvim" },
+	{ src = "https://github.com/iruzo/matrix-nvim" },
+	-- Plugins
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/echasnovski/mini.pick" },
 	{ src = "https://github.com/folke/zen-mode.nvim" },
