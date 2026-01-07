@@ -2,13 +2,12 @@
 vim.g.mapleader = " "
 
 -------Desactiver la surbrillance de la recherche -------------------------------------------------------------------
-vim.keymap.set("n", "<leader>/", ":nohlsearch<CR>", {
-	noremap = true, silent = true, desc = "Désactiver surbrillance recherche"
-})
+vim.keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR>", { silent = true, desc = "Désactiver surbrillance recherche" })
+-- vim.keymap.set("n", "<leader>/", ":nohlsearch<CR>", {
+-- 	noremap = true, silent = true, desc = "Désactiver surbrillance recherche"
+-- })
 
--------TABULATION--------------------------------------------------------------
--- Utiliser des tabulations réelles (physiques) pour la touche Tab
-vim.opt.expandtab = false
+-------TABS--------------------------------------------------------------
 vim.keymap.set("n", "<leader>tk", "<C-w>t<C-w>K", {
 	noremap = true, silent = true, desc = "Tab → Horizontal"
 })

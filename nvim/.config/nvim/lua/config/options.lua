@@ -5,6 +5,8 @@ vim.opt.cursorline = true         -- Highlight the current line
 vim.opt.clipboard = "unnamedplus" -- on utilise le presse papier du système par défaut
 vim.opt.signcolumn = "yes"
 vim.opt.winborder = "rounded"
+-- Utiliser des tabulations réelles (physiques) pour la touche Tab
+vim.opt.expandtab = false
 -- -- Active lazyredraw pour réduire le nombre de redraws inutiles
 -- -- Ce réglage améliore la fluidité du scroll, notamment lors de l'exécution de macros ou de défilements rapides,
 -- -- en évitant de rafraîchir l'écran plus que nécessaire.
@@ -27,3 +29,7 @@ vim.opt.history = 100
 ----------------------SWAP-FILE--------------------
 -- Désactivation des fichiers swap
 vim.opt.swapfile = false
+
+----------------------COLORS--------------------
+-- activation des couleurs dans neovim
+vim.opt.termguicolors = true
