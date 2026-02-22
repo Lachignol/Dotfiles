@@ -1,3 +1,3 @@
 require("hardtime").setup({
-	enabled = true,
+	enabled = false,
 })

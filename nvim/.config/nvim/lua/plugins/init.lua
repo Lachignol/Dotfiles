@@ -12,7 +12,7 @@ vim.pack.add({
 	{ src = "https://github.com/akinsho/git-conflict.nvim" },
 	{ src = "https://github.com/nvim-tree/nvim-tree.lua" },
 	{ src = "https://github.com/barrett-ruth/live-server.nvim" },
-	{ src = "https://github.com/m4xshen/autoclose.nvim" },
+	{ src = "https://github.com/windwp/nvim-autopairs" },
 	{ src = "https://github.com/tris203/precognition.nvim" },
 	{ src = "https://github.com/ThePrimeagen/vim-be-good" },
 	{ src = "https://github.com/nvzone/typr" },
@@ -26,9 +26,20 @@ vim.pack.add({
 	{ src = "https://github.com/chomosuke/typst-preview.nvim" },
 	{ src = "https://github.com/chentoast/marks.nvim" },
 	{ src = "https://github.com/echasnovski/mini.clue" },
+	{ src = "https://github.com/Lachignol/time-bomb.nvim" },
+	{ src = "https://github.com/nvim-mini/mini.test" },
+	{ src = "https://github.com/chomosuke/term-edit.nvim" },
+	-- IA
+	-- { src = "https://github.com/github/copilot.vim.git" },
+
+
+
+
+
 
 
 })
+
 
 -- Charger config plugins une fois installés
 require("plugins.plugin_configs.mini_pick")
@@ -38,7 +49,7 @@ require("plugins.plugin_configs.terminal")
 require("plugins.plugin_configs.hardtime")
 require("plugins.plugin_configs.git_conflict")
 require("plugins.plugin_configs.live-server")
-require("plugins.plugin_configs.autoclose")
+require("plugins.plugin_configs.autopairs")
 require("plugins.plugin_configs.precognition")
 require("plugins.plugin_configs.typr")
 require("plugins.plugin_configs.smear_cursor")
@@ -50,3 +61,7 @@ require("plugins.plugin_configs.cmdline")
 require("plugins.plugin_configs.starter")
 require("plugins.plugin_configs.marks")
 require("plugins.plugin_configs.nvim-tree")
+require("plugins.plugin_configs.mini_test")
+require("plugins.plugin_configs.time-bomb")
+require("plugins.plugin_configs.term_edit")
+-- require("plugins.plugin_configs.boilerplate")

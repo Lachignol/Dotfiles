@@ -148,10 +148,15 @@ vim.keymap.set(
 )
 
 -- Permet de faire esc dans le terminal
-vim.keymap.set('t', '', "")
-vim.keymap.set('t', '', "")
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = "Sortir du terminal" })
 
 -- Ferme la quicklist
 vim.keymap.set('n', '<leader>cq', ':cclose | lclose<CR>', {
 	silent = true, desc = "Fermer quickfix"
 })
+
+
+-- keymaps pour lua
+vim.keymap.set('n', '<leader>xf', '<cmd>source %<CR>', { desc = "Recharge le fichier courrant" })
+vim.keymap.set('n', '<leader>xx', ':.lua<CR>', { desc = "Execute la ligne courrante (lua)" })
+vim.keymap.set('v', '<leader>xx', ':.lua<CR>', { desc = "Execute la selection (lua)" })

@@ -1,8 +1,8 @@
 require("toggleterm").setup({
-	size = 20,
+	size = 10,
 	open_mapping = nil, -- on désactive le mapping par défaut
 	shade_terminals = true,
-	direction = "float",
+	direction = "horizontal",
 	float_opts = {
 		border = "curved",
 		winblend = 0,
@@ -25,3 +25,6 @@ end, { desc = "Ouvrir terminal vertical" })
 vim.keymap.set("n", "<C-/>", function()
 	horizontal_term:toggle()
 end, { desc = "Ouvrir terminal horizontal" })
+
+-- Si tu veux envoyer un vrai Esc au terminal (rarement utile)
+-- vim.keymap.set("t", "<M-[>", "<Esc>", { desc = "Envoyer Esc au terminal" })
