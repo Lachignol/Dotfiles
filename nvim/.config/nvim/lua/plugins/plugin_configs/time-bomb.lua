@@ -1,4 +1,4 @@
--- vim.opt.runtimepath:append(" ~/coding-lab/time-bomb.nvim/")
+-- vim.opt.runtimepath:append(" ~/coding_lab/time-bomb.nvim/")
 require("time-bomb").setup({
 	-- enable_default_keymaps = true,
 	-- pomodoro_cycles = {

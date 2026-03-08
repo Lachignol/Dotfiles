@@ -1,4 +1,4 @@
-vim.opt.runtimepath:append(" ~/coding-lab/boilerplate.nvim/")
+vim.opt.runtimepath:append(" ~/coding_lab/boilerplate.nvim/")
 require("boilerplate").setup({
 	-- Message de salutation par défaut
 	default_greeting = "Hello",
