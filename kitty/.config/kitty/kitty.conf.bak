@@ -1,0 +1,28 @@
+# TERMINAL VT100 1985 - NOIR/VERT PHOSPHOR
+# background #001122
+# foreground #44ff88
+# cursor #44ff88
+# selection_background #112244
+# selection_foreground #44ff88
+
+# Palette IBM 5150 authentique
+# color0 #000000
+# color1 #aa0000
+# color2 #00aa00
+# color3 #aaaa00
+# color4 #0000aa
+# color5 #aa00aa
+# color6 #00aa88
+# color7 #888888
+# color8 #444444
+# color9 #ff4444
+# color10 #44ff44
+# color11 #ffff44
+# color12 #4444ff
+# color13
+
+
+# BEGIN_KITTY_THEME
+# ANSI 1987
+include current-theme.conf
+# END_KITTY_THEME

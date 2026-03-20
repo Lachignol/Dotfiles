@@ -132,15 +132,23 @@ vim.opt.laststatus = 2
 -- └────────────────────────────────────────────────────────────────────┘
 
 -- ┌─ Exemple 6 : Avec fonction personnalisée Git branch ───────────────┐
-function GitBranch()
-	local branch = vim.fn.system("git branch --show-current 2>/dev/null | tr -d '\n'")
-	if branch ~= "" then
-		return " " .. "[" .. branch .. "]"
-	else
-		return ""
+-- 1. On crée un événement qui met à jour la branche SEULEMENT quand tu ouvres ou sauvegardes le fichier
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "FocusGained" }, {
+	callback = function()
+		local branch = vim.fn.system("git branch --show-current 2>/dev/null | tr -d '\n'")
+		if branch ~= "" then
+			vim.b.git_branch = " [" .. branch .. "]"
+		else
+			vim.b.git_branch = ""
+		end
 	end
+})
+-- 2. La fonction devient instantanée car elle lit juste la mémoire
+function _G.GitBranch()
+	return vim.b.git_branch or ""
 end
 
+-- 3. Configuration de la statusline
 vim.opt.statusline = "%f%{v:lua.GitBranch()} %m %= %l:%c %p%%"
 -- Résultat: options.lua [main] [+]                42:15 28%
 -- └────────────────────────────────────────────────────────────────────┘

@@ -28,7 +28,6 @@ vim.pack.add({
 	{ src = "https://github.com/echasnovski/mini.clue" },
 	{ src = "https://github.com/Lachignol/time-bomb.nvim" },
 	{ src = "https://github.com/nvim-mini/mini.test" },
-	{ src = "https://github.com/chomosuke/term-edit.nvim" },
 	-- IA
 	-- { src = "https://github.com/github/copilot.vim.git" },
 
@@ -63,5 +62,4 @@ require("plugins.plugin_configs.marks")
 require("plugins.plugin_configs.nvim-tree")
 require("plugins.plugin_configs.mini_test")
 require("plugins.plugin_configs.time-bomb")
-require("plugins.plugin_configs.term_edit")
 -- require("plugins.plugin_configs.boilerplate")
