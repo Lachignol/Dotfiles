@@ -40,6 +40,9 @@ vim.pack.add({
 })
 
 
+-- Active plugin natif et leur config
+require("plugins.plugin_configs.undotree")
+
 -- Charger config plugins une fois installés
 require("plugins.plugin_configs.mini_pick")
 require("plugins.plugin_configs.oil")
