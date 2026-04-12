@@ -32,14 +32,14 @@ require("mini.pick").setup({
 
 })
 -- Keymaps pour ouvrir les pickers mini.pick intégrés
-vim.keymap.set('n', '<leader><leader>', ":Pick files<CR>", { desc = "Chercher fichier" })
-vim.keymap.set('n', '<leader>g<leader>', ":Pick grep_live<CR>", { desc = "Chercher grep" })
-vim.keymap.set('n', '<leader>h<leader>', ":Pick help<CR>", { desc = "Chercher help" })
+vim.keymap.set('n', '<leader><leader>', ":Pick files<CR>", { desc = "Search files" })
+vim.keymap.set('n', '<leader>g<leader>', ":Pick grep_live<CR>", { desc = "Search grep" })
+vim.keymap.set('n', '<leader>h<leader>', ":Pick help<CR>", { desc = "Search in help" })
 vim.keymap.set("n", "<leader>.", function()
 	local ok = pcall(function()
 		vim.cmd("Pick resume")
 	end)
 	if not ok then
-		vim.notify("Aucun historique mini.pick", vim.log.levels.WARN)
+		vim.notify("No last search", vim.log.levels.WARN)
 	end
-end, { desc = "Revenir à la dernière recherche" })
+end, { desc = "Open last search" })

@@ -20,6 +20,10 @@
       "rev": "a1badcd070d176172940eb55d9d59029dad1c5a6",
       "src": "https://github.com/akinsho/git-conflict.nvim"
     },
+    "guttermarks.nvim": {
+      "rev": "9063915df8e5067c2f1e6263c40392624bcd2744",
+      "src": "https://github.com/dimtion/guttermarks.nvim"
+    },
     "hardtime.nvim": {
       "rev": "b4e431934af1fe224a3a801f632c008278cb7628",
       "src": "https://github.com/m4xshen/hardtime.nvim"
@@ -59,6 +63,10 @@
     "mini.cmdline": {
       "rev": "b1184b252512c85562d75fa998d4835a2fa6a3f7",
       "src": "https://github.com/nvim-mini/mini.cmdline"
+    },
+    "mini.extra": {
+      "rev": "bc4e872500fd6d2ce252604e0ffa100f64f02280",
+      "src": "https://github.com/nvim-mini/mini.extra"
     },
     "mini.pick": {
       "rev": "8521fe21df86e08d9e4b3c3f3a7d50e47954e1af",

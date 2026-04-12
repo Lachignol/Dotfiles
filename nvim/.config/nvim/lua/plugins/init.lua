@@ -5,7 +5,6 @@ vim.pack.add({
 	{ src = "https://github.com/iruzo/matrix-nvim" },
 	-- Plugins
 	{ src = "https://github.com/stevearc/oil.nvim" },
-	{ src = "https://github.com/echasnovski/mini.pick" },
 	{ src = "https://github.com/folke/zen-mode.nvim" },
 	{ src = "https://github.com/akinsho/toggleterm.nvim" },
 	{ src = "https://github.com/m4xshen/hardtime.nvim" },
@@ -21,13 +20,16 @@ vim.pack.add({
 	{ src = "https://github.com/akinsho/bufferline.nvim" },
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
 	{ src = 'https://github.com/leath-dub/snipe.nvim' },
-	{ src = "https://github.com/nvim-mini/mini.cmdline" },
-	{ src = "https://github.com/nvim-mini/mini.starter" },
 	{ src = "https://github.com/chomosuke/typst-preview.nvim" },
 	{ src = "https://github.com/chentoast/marks.nvim" },
-	{ src = "https://github.com/echasnovski/mini.clue" },
 	{ src = "https://github.com/Lachignol/time-bomb.nvim" },
 	{ src = "https://github.com/nvim-mini/mini.test" },
+	{ src = "https://github.com/echasnovski/mini.clue" },
+	{ src = "https://github.com/echasnovski/mini.pick" },
+	{ src = "https://github.com/nvim-mini/mini.cmdline" },
+	{ src = "https://github.com/nvim-mini/mini.starter" },
+	{ src = "https://github.com/nvim-mini/mini.extra" },
+	{ src = "https://github.com/dimtion/guttermarks.nvim" },
 	-- IA
 	-- { src = "https://github.com/github/copilot.vim.git" },
 
@@ -44,7 +46,6 @@ vim.pack.add({
 require("plugins.plugin_configs.undotree")
 
 -- Charger config plugins une fois installés
-require("plugins.plugin_configs.mini_pick")
 require("plugins.plugin_configs.oil")
 require("plugins.plugin_configs.zen")
 require("plugins.plugin_configs.terminal")
@@ -59,10 +60,12 @@ require("plugins.plugin_configs.bufferline")
 require("plugins.plugin_configs.snipe")
 require("plugins.plugin_configs.clue")
 require("plugins.plugin_configs.typst-preview")
-require("plugins.plugin_configs.cmdline")
-require("plugins.plugin_configs.starter")
-require("plugins.plugin_configs.marks")
+require("plugins.plugin_configs.mini_cmdline")
+require("plugins.plugin_configs.mini_starter")
+require("plugins.plugin_configs.guttermarks")
 require("plugins.plugin_configs.nvim-tree")
 require("plugins.plugin_configs.mini_test")
+require("plugins.plugin_configs.mini_pick")
+require("plugins.plugin_configs.mini_extra")
 require("plugins.plugin_configs.time-bomb")
 -- require("plugins.plugin_configs.boilerplate")

@@ -18,4 +18,4 @@ zen.setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>z", function() zen.toggle() end, { desc = "Concentration" })
+vim.keymap.set("n", "<leader>z", function() zen.toggle() end, { desc = "Focus mode" })

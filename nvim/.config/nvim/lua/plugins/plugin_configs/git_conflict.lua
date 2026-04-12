@@ -8,24 +8,24 @@ require('git-conflict').setup({
 vim.api.nvim_del_user_command('GitConflictListQf')
 -- Keymaps
 -- Fonction personel pour ajouter les conflit dans la quickfix
-vim.keymap.set('n', '<leader>lgc', '<cmd>GitConflicts<cr>',
-	{ desc = '(GIT) Liste TOUS les conflits' })
--- Navigation fichiers (quickfix)
-vim.keymap.set('n', ']q', '<cmd>cnext<cr>zz',
-	{ desc = '(GIT) Fichier conflit suivant' })
-vim.keymap.set('n', '[q', '<cmd>cprev<cr>zz',
-	{ desc = '(GIT) Fichier conflit précédent' })
--- Navigation conflits (dans le fichier)
-vim.keymap.set('n', ']x', '<cmd>GitConflictNextConflict<cr>',
-	{ desc = '(GIT) Conflit suivant' })
-vim.keymap.set('n', '[x', '<cmd>GitConflictPrevConflict<cr>',
-	{ desc = '(GIT) Conflit précédent' })
+vim.keymap.set('n', '<leader>gcl', '<cmd>GitConflicts<cr>',
+	{ desc = '(GIT) List ALL conflicts' })
+-- -- Navigation fichiers (quickfix)
+-- vim.keymap.set('n', ']q', '<cmd>cnext<cr>zz',
+-- 	{ desc = '(GIT) File next conflict ' })
+-- vim.keymap.set('n', '[q', '<cmd>cprev<cr>zz',
+-- 	{ desc = '(GIT) File previous conflict' })
+-- -- Navigation conflits (dans le fichier)
+-- vim.keymap.set('n', ']x', '<cmd>GitConflictNextConflict<cr>',
+-- 	{ desc = '(GIT) Next conflict' })
+-- vim.keymap.set('n', '[x', '<cmd>GitConflictPrevConflict<cr>',
+-- 	{ desc = '(GIT) Previous conflict' })
 -- Résolution
-vim.keymap.set('n', '<leader>co', '<cmd>GitConflictChooseOurs<cr>',
-	{ desc = '(GIT) Garder notre version' })
-vim.keymap.set('n', '<leader>ct', '<cmd>GitConflictChooseTheirs<cr>',
-	{ desc = '(GIT) Garder leur version' })
-vim.keymap.set('n', '<leader>cb', '<cmd>GitConflictChooseBoth<cr>',
-	{ desc = '(GIT) Garder les deux' })
-vim.keymap.set('n', '<leader>cn', '<cmd>GitConflictChooseNone<cr>',
-	{ desc = '(GIT) Garder aucun' })
+vim.keymap.set('n', '<leader>gco', '<cmd>GitConflictChooseOurs<cr>',
+	{ desc = '(GIT) Keep our version' })
+vim.keymap.set('n', '<leader>gct', '<cmd>GitConflictChooseTheirs<cr>',
+	{ desc = '(GIT) Keep there version' })
+vim.keymap.set('n', '<leader>gcb', '<cmd>GitConflictChooseBoth<cr>',
+	{ desc = '(GIT) Keep both' })
+vim.keymap.set('n', '<leader>gcn', '<cmd>GitConflictChooseNone<cr>',
+	{ desc = '(GIT) Keep none' })

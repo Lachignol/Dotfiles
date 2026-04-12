@@ -16,15 +16,15 @@ local horizontal_term = Terminal:new({ direction = "horizontal", hidden = true }
 
 vim.keymap.set("n", "<C-\\>", function()
 	float_term:toggle()
-end, { desc = "Ouvrir terminal flottant" })
+end, { desc = "Open floating terminal" })
 
 vim.keymap.set("n", "<C-|>", function()
 	vertical_term:toggle()
-end, { desc = "Ouvrir terminal vertical" })
+end, { desc = "Open vertical terminal" })
 
 vim.keymap.set("n", "<C-/>", function()
 	horizontal_term:toggle()
-end, { desc = "Ouvrir terminal horizontal" })
+end, { desc = "Open horizontal terminal" })
 
 -- Si tu veux envoyer un vrai Esc au terminal (rarement utile)
 -- vim.keymap.set("t", "<M-[>", "<Esc>", { desc = "Envoyer Esc au terminal" })

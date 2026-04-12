@@ -29,7 +29,7 @@ vim.keymap.set('n', '<leader>e', function()
 	else
 		require("oil").open_float() -- ouvre Oil en floating window
 	end
-end, { desc = "Ouvrir oil" })
+end, { desc = "Open oil" })
 
 
 -- CONFIG nORMAL SETUP OUVRE OIL DANS UN BUFFER ET POUR REVENIR AU BUFFER D'AVANT CTRL -C
@@ -37,4 +37,4 @@ end, { desc = "Ouvrir oil" })
 --
 -- vim.keymap.set("n", "<leader>e", function()
 -- 	require("oil").open(nil, { split = "left" })
--- end, { desc = "Ouvrir oil" })
+-- end, { desc = "Open oil" })
