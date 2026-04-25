@@ -1,0 +1,72 @@
+{
+  "classhpp": {
+    "prefix": "classhpp",
+    "body": [
+      "#pragma once",
+      "",
+      "#include <string>",
+      "#include <iostream>",
+      "",
+      "class ${1:NomClasse} {",
+      "public:",
+      "\t${1:NomClasse}();",
+      "\t${1:NomClasse}(const ${1:NomClasse}& other);",
+      "\t${1:NomClasse}& operator=(const ${1:NomClasse}& other);",
+      "\t~${1:NomClasse}();",
+      "",
+      "\tstd::string toString() const;",
+      "",
+      "private:",
+      "\t${2:// membres privés};",
+      "};",
+      "",
+      "std::ostream& operator<<(std::ostream& os, const ${1:NomClasse}& obj);"
+    ],
+    "description": ".hpp avec pragma once"
+  },
+  "classcpp": {
+    "prefix": "classcpp",
+    "body": [
+      "#include \"${1:NomClasse}.hpp\"",
+      "",
+      "// Constructeur par défaut",
+      "${1:NomClasse}::${1:NomClasse}() {",
+      "\t// TODO",
+      "}",
+      "",
+      "// Constructeur de copie",
+      "${1:NomClasse}::${1:NomClasse}(const ${1:NomClasse}& other) {",
+      "\t// TODO",
+      "}",
+      "",
+      "// Opérateur d'affectation de copie",
+      "${1:NomClasse}& ${1:NomClasse}::operator=(const ${1:NomClasse}& other) {",
+      "\tif (this != &other) {",
+      "\t\t// TODO: assign fields",
+      "\t}",
+      "\treturn *this;",
+      "}",
+      "",
+      "// Destructeur",
+      "${1:NomClasse}::~${1:NomClasse}() {",
+      "\t// TODO",
+      "}",
+      "",
+      "std::string ${1:NomClasse}::toString() const {",
+      "\treturn \"{ ${2:description à afficher} }\";",
+      "}",
+      "",
+      "std::ostream& operator<<(std::ostream& os, const ${1:NomClasse}& obj) {",
+      "\treturn os << obj.toString();",
+      "}"
+    ],
+    "description": ".cpp"
+  },
+  "hello": {
+    "prefix": "hello",
+    "body": [
+      "Hello, world!"
+    ],
+    "description": "Hello world snippet"
+  }
+}

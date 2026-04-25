@@ -17,7 +17,7 @@ require("mason-tool-installer").setup({
 		"html-lsp",
 		"typescript-language-server",
 		"clangd",
-		-- "tinymist",
+		"tinymist",
 		"gopls",
 		-- a l'ecole 42 comme libc date de clovis faire a la main :MasonInstall tree-sitter-cli@v0.24.7
 		"tree-sitter-cli",
@@ -35,7 +35,7 @@ require("mason-lspconfig").setup({
 		"html",
 		"ts_ls",
 		"clangd",
-		-- "tinymist",
+		"tinymist",
 		"gopls",
 	},
 	automatic_enable = true, -- Active automatiquement les LSP

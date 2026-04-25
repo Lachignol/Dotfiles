@@ -1,0 +1,17 @@
+{
+  "main": {
+    "prefix": "main",
+    "body": [
+      "package main",
+      "",
+      "import (",
+      "\t\"fmt\"",
+      ")",
+      "",
+      "func main() {",
+      "\t${1:// code}",
+      "}"
+    ],
+    "description": "Canonique pour fonction main Go"
+  }
+}
