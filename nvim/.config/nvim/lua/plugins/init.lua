@@ -25,8 +25,9 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-mini/mini.starter" },
 	{ src = "https://github.com/nvim-mini/mini.extra" },
 	{ src = "https://github.com/dimtion/guttermarks.nvim" },
+	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
 
-	-- Decommenter pour test lua 
+	-- Decommenter pour test lua
 	-- { src = "https://github.com/nvim-mini/mini.test" },
 
 	-- Decommenter pour typst
@@ -70,12 +71,13 @@ require("plugins.plugin_configs.guttermarks")
 require("plugins.plugin_configs.nvim-tree")
 require("plugins.plugin_configs.mini_pick")
 require("plugins.plugin_configs.mini_extra")
+require("plugins.plugin_configs.render-markdown")
 require("plugins.plugin_configs.time-bomb")
 
 
 
 
--- Decommenter pour test lua 
+-- Decommenter pour test lua
 -- require("plugins.plugin_configs.mini_test")
 
 -- Decommenter pour dactilo (style monkeytype)
