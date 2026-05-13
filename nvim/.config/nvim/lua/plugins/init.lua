@@ -26,6 +26,9 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-mini/mini.extra" },
 	{ src = "https://github.com/dimtion/guttermarks.nvim" },
 	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
+	{ src = "https://github.com/f-person/git-blame.nvim" },
+
+
 
 	-- Decommenter pour test lua
 	-- { src = "https://github.com/nvim-mini/mini.test" },
@@ -72,7 +75,9 @@ require("plugins.plugin_configs.nvim-tree")
 require("plugins.plugin_configs.mini_pick")
 require("plugins.plugin_configs.mini_extra")
 require("plugins.plugin_configs.render-markdown")
+require("plugins.plugin_configs.git-blame")
 require("plugins.plugin_configs.time-bomb")
+
 
 
 
