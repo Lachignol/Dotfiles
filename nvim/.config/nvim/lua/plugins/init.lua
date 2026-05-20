@@ -27,6 +27,7 @@ vim.pack.add({
 	{ src = "https://github.com/dimtion/guttermarks.nvim" },
 	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
 	{ src = "https://github.com/f-person/git-blame.nvim" },
+	{ src = "https://github.com/christoomey/vim-tmux-navigator" },
 
 
 
@@ -77,6 +78,7 @@ require("plugins.plugin_configs.mini_extra")
 require("plugins.plugin_configs.render-markdown")
 require("plugins.plugin_configs.git-blame")
 require("plugins.plugin_configs.time-bomb")
+require("plugins.plugin_configs.tmux")
 
 
 
