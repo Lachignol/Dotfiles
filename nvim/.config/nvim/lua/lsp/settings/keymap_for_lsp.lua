@@ -26,12 +26,26 @@ function M.on_attach(client, bufnr)
 	bufmap("n", "<leader>fe", vim.diagnostic.setloclist, { desc = "Liste rapide local diagnostics" })
 	bufmap("n", "<leader>fE", vim.diagnostic.setqflist, { desc = "Liste rapide global diagnostics" })
 	if client:supports_method("textDocument/formatting") then
+		-- Activer le formatage par défaut pour ce buffer
+		vim.b[bufnr].lsp_formatting_enabled = true
+		-- Autocmd qui formate uniquement si la variable est à true
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			buffer = bufnr,
 			callback = function()
-				vim.lsp.buf.format({ bufnr = bufnr })
+				if vim.b[bufnr].lsp_formatting_enabled then
+					vim.lsp.buf.format({ bufnr = bufnr })
+				end
 			end,
 		})
+		-- Commande pour activer/désactiver le formatage sur le buffer courant
+		vim.api.nvim_buf_create_user_command(bufnr, "FormatToggle", function()
+			vim.b[bufnr].lsp_formatting_enabled = not vim.b[bufnr].lsp_formatting_enabled
+			local status = vim.b[bufnr].lsp_formatting_enabled and "activate" or "disable"
+			vim.notify("Auto Format " .. status .. " for this buffer", vim.log.levels.INFO)
+		end, { desc = "Activate/Disable the Auto-format" })
+
+		-- Keymap pour toggle
+		bufmap("n", "<leader>tf", ":FormatToggle<CR>", { desc = "Toggle formatage LSP" })
 	end
 end
 

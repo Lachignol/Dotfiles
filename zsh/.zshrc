@@ -16,6 +16,12 @@ for key in ~/.ssh/id_*; do
     fi
 done
 
+
+
+# Ajouter  au PATH
+export PATH=$PATH:$HOME/.local/bin
+
+
 # Ajouter Go au PATH
 export PATH=$PATH:/usr/local/go/bin
 
