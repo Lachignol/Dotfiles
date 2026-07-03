@@ -42,9 +42,7 @@ function my_git_prompt() {
 }
 
 function my_current_branch() {
-  local branch
-  branch=$(git_current_branch || echo "(no branch)")
-  echo "${branch//\%/%%}"
+  echo $(git_current_branch || echo "(no branch)")
 }
 
 function ssh_connection() {

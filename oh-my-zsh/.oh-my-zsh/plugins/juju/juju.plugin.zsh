@@ -1,5 +1,17 @@
 # ---------------------------------------------------------- #
 # Aliases and functions for juju (https://juju.is)           #
+# ---------------------------------------------------------- #
+
+# Load TAB completions
+# You need juju's bash completion script installed. By default bash-completion's
+# location will be used (i.e. pkg-config --variable=completionsdir bash-completion).
+completion_file="$(pkg-config --variable=completionsdir bash-completion 2>/dev/null)/juju" || \
+  completion_file="/usr/share/bash-completion/completions/juju"
+[[ -f "$completion_file" ]] && source "$completion_file"
+unset completion_file
+
+# ---------------------------------------------------------- #
+# Aliases (in alphabetic order)                              #
 #                                                            #
 # Generally,                                                 #
 #   - `!` means --force --no-wait -y                         #
@@ -120,7 +132,6 @@ jclean() {
   fi
 
   echo
-  local controller
   for controller in ${=controllers}; do
     timeout 2m juju destroy-controller --destroy-all-models --destroy-storage --force --no-wait -y $controller
     timeout 2m juju kill-controller -y -t 0 $controller 2>/dev/null
@@ -154,11 +165,10 @@ jreld() {
 
 # Return Juju current controller
 jcontroller() {
-  local file="${JUJU_DATA:-$HOME/.local/share/juju}/controllers.yaml"
-  [[ -f "$file" ]] || return 1
-
-  local controller="$(awk '/current-controller/ {print $2}' "$file")"
-  [[ -z "$controller" ]] && return 1
+  local controller="$(awk '/current-controller/ {print $2}' ~/.local/share/juju/controllers.yaml)"
+  if [[ -z "$controller" ]]; then
+    return 1
+  fi
 
   echo $controller
   return 0
@@ -166,9 +176,6 @@ jcontroller() {
 
 # Return Juju current model
 jmodel() {
-  local file="${JUJU_DATA:-$HOME/.local/share/juju}/models.yaml"
-  [[ -f "$file" ]] || return 1
-
   local yqbin="$(whereis yq | awk '{print $2}')"
 
   if [[ -z "$yqbin" ]]; then
@@ -176,10 +183,9 @@ jmodel() {
     return 1
   fi
 
-  local controller="$(jcontroller)"
-  local model="$(yq e ".controllers.[\"${controller}\"].current-model" < "${file}" | cut -d/ -f2)"
+  local model="$(yq e ".controllers.$(jcontroller).current-model" < ~/.local/share/juju/models.yaml | cut -d/ -f2)"
 
-  if [[ -z "$model" || $model == "null" ]]; then
+  if [[ -z "$model" ]]; then
     echo "--"
     return 1
   fi
@@ -188,10 +194,9 @@ jmodel() {
   return 0
 }
 
-# Watch juju status, with optional interval (default: 1 sec)
+# Watch juju status, with optional interval (default: 5 sec)
 wjst() {
-  command -v juju >/dev/null 2>&1 || return 1
-  local interval="${1:-1}"
+  local interval="${1:-5}"
   shift $(( $# > 0 ))
   watch -n "$interval" --color juju status --relations --color "$@"
 }

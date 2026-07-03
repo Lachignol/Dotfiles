@@ -12,6 +12,14 @@ vim.opt.expandtab = false
 -- -- Ce réglage améliore la fluidité du scroll, notamment lors de l'exécution de macros ou de défilements rapides,
 -- -- en évitant de rafraîchir l'écran plus que nécessaire.
 -- vim.opt.lazyredraw = true
+-- Ignore la casse lors des recherches (/mot)
+vim.opt.ignorecase = true
+
+-- Si la recherche contient une majuscule, la casse est prise en compte
+-- Exemple :
+--   /hello -> hello, Hello, HELLO...
+--   /Hello -> uniquement Hello
+vim.opt.smartcase = true
 
 
 ----------------------HISTORY----------------------

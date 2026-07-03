@@ -1,9 +1,10 @@
-# kube-ps1: Kubernetes prompt for bash, zsh, and fish
+# kube-ps1: Kubernetes prompt for bash and zsh
 
 ![GitHub Release](https://img.shields.io/github/v/release/jonmosco/kube-ps1)
 [![CI](https://github.com/jonmosco/kube-ps1/actions/workflows/ci.yml/badge.svg)](https://github.com/jonmosco/kube-ps1/actions/workflows/ci.yml)
 
-A script that lets you add the current Kubernetes context and namespace configured on `kubectl` to your Bash, Zsh, or Fish prompt.
+A script that lets you add the current Kubernetes context and namespace
+configured on `kubectl` to your Bash/Zsh prompt strings (i.e. the `$PS1`).
 
 Inspired by several tools used to simplify usage of `kubectl`.
 
@@ -75,21 +76,6 @@ PROMPT='$(kube_ps1)'$PROMPT # or RPROMPT='$(kube_ps1)'
 source /path/to/kube-ps1.sh
 PS1='[\u@\h \W $(kube_ps1)]\$ '
 ```
-
-#### Fish
-
-Add this to `~/.config/fish/config.fish`:
-
-```fish
-source /path/to/kube-ps1.fish
-
-function fish_prompt
-    echo -n (kube_ps1) ' '
-    # your existing prompt here
-end
-```
-
-> Note: Fish users should source `kube-ps1.fish` instead of `kube-ps1.sh`.
 
 ## Requirements
 
@@ -198,7 +184,8 @@ If the font is not properly installed, and the glyph is not available, it will d
 
 ## Customization
 
-The default settings can be overridden in `~/.bashrc`, `~/.zshrc`, or `~/.config/fish/config.fish` by setting the following variables:
+The default settings can be overridden in `~/.bashrc` or `~/.zshrc` by setting
+the following variables:
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |

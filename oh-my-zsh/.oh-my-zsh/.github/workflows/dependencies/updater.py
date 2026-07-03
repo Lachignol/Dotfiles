@@ -219,7 +219,6 @@ class Dependency:
             if status["has_updates"] is True:
                 short_sha = status["head_ref"][:8]
                 new_version = status["version"] if is_tag else short_sha
-                source_ref = new_version if is_tag else status["head_ref"]
 
                 try:
                     branch_name = f"update/{self.path}/{new_version}"
@@ -228,7 +227,7 @@ class Dependency:
                     branch = Git.checkout_or_create_branch(branch_name)
 
                     # Update dependency files
-                    self.__apply_upstream_changes(source_ref)
+                    self.__apply_upstream_changes()
 
                     if not Git.repo_is_clean():
                         # Update dependencies.yml file
@@ -298,7 +297,7 @@ Check out the [list of changes]({status["compare_url"]}).
         dep_yaml = DependencyStore.update_dependency_version(self.path, new_version)
         DependencyStore.write_store(DEPS_YAML_FILE, dep_yaml)
 
-    def __apply_upstream_changes(self, ref: str) -> None:
+    def __apply_upstream_changes(self) -> None:
         # Patterns to ignore in copying files from upstream repo
         GLOBAL_IGNORE = [".git", ".github", ".gitignore"]
 
@@ -307,11 +306,12 @@ Check out the [list of changes]({status["compare_url"]}).
         postcopy = self.values.get("postcopy")
 
         repo = self.values["repo"]
+        branch = self.values["branch"]
         remote_url = f"https://github.com/{repo}.git"
         repo_dir = os.path.join(TMP_DIR, repo)
 
         # Clone repository
-        Git.clone(remote_url, ref, repo_dir, reclone=True)
+        Git.clone(remote_url, branch, repo_dir, reclone=True)
 
         # Run precopy on tmp repo
         if precopy is not None:
@@ -348,7 +348,7 @@ class Git:
     default_branch = "master"
 
     @staticmethod
-    def clone(remote_url: str, ref: str, repo_dir: str, reclone=False):
+    def clone(remote_url: str, branch: str, repo_dir: str, reclone=False):
         # If repo needs to be fresh
         if reclone and os.path.exists(repo_dir):
             shutil.rmtree(repo_dir)
@@ -356,11 +356,11 @@ class Git:
         # Clone repo in tmp directory and checkout branch
         if not os.path.exists(repo_dir):
             print(
-                f"Cloning {remote_url} to {repo_dir} and checking out {ref}",
+                f"Cloning {remote_url} to {repo_dir} and checking out {branch}",
                 file=sys.stderr,
             )
             CommandRunner.run_or_fail(
-                ["git", "clone", "--depth=1", "--revision", ref, remote_url, repo_dir],
+                ["git", "clone", "--depth=1", "-b", branch, remote_url, repo_dir],
                 stage="Clone",
             )
 
@@ -392,14 +392,12 @@ class Git:
         Returns `False` if the repo is dirty.
         """
         try:
-            result = CommandRunner.run_or_fail(
-                ["git", "status", "--porcelain", "--untracked-files=normal"],
-                stage="CheckRepoClean",
+            CommandRunner.run_or_fail(
+                ["git", "diff", "--exit-code"], stage="CheckRepoClean"
             )
+            return True
         except CommandRunner.Exception:
             return False
-
-        return result.stdout.strip() == b""
 
     @staticmethod
     def add_and_commit(scope: str, version: str) -> bool:
