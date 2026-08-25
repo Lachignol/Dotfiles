@@ -1,0 +1,8 @@
+require("config.autocmds")
+require("config.keymaps")
+require("config.customcmds")
+require("config.options")
+require("lsp")
+require("plugins")
+require("visual.colorscheme")
+require("visual.statusline")
