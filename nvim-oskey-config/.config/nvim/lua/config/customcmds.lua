@@ -1,3 +1,8 @@
+vim.keymap.set("n", "<leader>cp", function()
+	local path = vim.fn.expand("%:p")
+	vim.fn.setreg("+", path)
+	print("Path copié : " .. path)
+end, { desc = "Copier le path du buffer" })
 -- ============================================================================
 -- FONCTION : GitConflicts
 -- ============================================================================
