@@ -19,6 +19,7 @@ require("mason-tool-installer").setup({
 		"clangd",
 		-- "tinymist",
 		-- "gopls",
+		-- a l'ecole 42 :MasonInstall gopls@v0.21.1
 		-- a l'ecole 42 comme libc date de clovis faire a la main :MasonInstall tree-sitter-cli@v0.24.7
 		"tree-sitter-cli",
 	},

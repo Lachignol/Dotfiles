@@ -72,13 +72,13 @@
       "rev": "7bdc9decc8b623f245c1e42a64bc41e61d574c5e",
       "src": "https://github.com/nvim-mini/mini.starter"
     },
+    "mini.surround": {
+      "rev": "72feeaa0f984646efde875cc775a97b6f8a8be9b",
+      "src": "https://github.com/echasnovski/mini.surround"
+    },
     "nvim-autopairs": {
       "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
       "src": "https://github.com/windwp/nvim-autopairs"
-    },
-    "nvim-dev-container": {
-      "rev": "87ea57f420b3460d0c45e239057ffc38fa32f886",
-      "src": "https://github.com/esensar/nvim-dev-container"
     },
     "nvim-lspconfig": {
       "rev": "8fde495949782bb61c2605174e231d145a048d8c",

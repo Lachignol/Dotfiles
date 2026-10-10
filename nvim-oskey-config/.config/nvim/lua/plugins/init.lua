@@ -1,48 +1,49 @@
 vim.pack.add({
-    -- Thèmes
-    { src = "https://github.com/vague2k/vague.nvim" },
-    -- { src = "https://github.com/scottmckendry/cyberdream.nvim" },
-    -- { src = "https://github.com/iruzo/matrix-nvim" },
-    -- Plugins
-    { src = "https://github.com/stevearc/oil.nvim" },
-    { src = "https://github.com/folke/zen-mode.nvim" },
-    { src = "https://github.com/akinsho/toggleterm.nvim" },
-    { src = "https://github.com/m4xshen/hardtime.nvim" },
-    { src = "https://github.com/akinsho/git-conflict.nvim" },
-    { src = "https://github.com/nvim-tree/nvim-tree.lua" },
-    { src = "https://github.com/barrett-ruth/live-server.nvim" },
-    { src = "https://github.com/windwp/nvim-autopairs" },
-    { src = "https://github.com/tris203/precognition.nvim" },
-    { src = "https://github.com/ThePrimeagen/vim-be-good" },
-    { src = "https://github.com/sphamba/smear-cursor.nvim" },
-    { src = "https://github.com/akinsho/bufferline.nvim" },
-    { src = "https://github.com/nvim-tree/nvim-web-devicons" },
-    { src = 'https://github.com/leath-dub/snipe.nvim' },
-    { src = "https://github.com/Lachignol/time-bomb.nvim" },
-    { src = "https://github.com/echasnovski/mini.clue" },
-    { src = "https://github.com/echasnovski/mini.pick" },
-    { src = "https://github.com/nvim-mini/mini.cmdline" },
-    { src = "https://github.com/nvim-mini/mini.starter" },
-    { src = "https://github.com/nvim-mini/mini.extra" },
-    { src = "https://github.com/dimtion/guttermarks.nvim" },
-    { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
-    { src = "https://github.com/f-person/git-blame.nvim" },
-    { src = "https://github.com/christoomey/vim-tmux-navigator" },
+	-- Thèmes
+	{ src = "https://github.com/vague2k/vague.nvim" },
+	-- { src = "https://github.com/scottmckendry/cyberdream.nvim" },
+	-- { src = "https://github.com/iruzo/matrix-nvim" },
+	-- Plugins
+	{ src = "https://github.com/stevearc/oil.nvim" },
+	{ src = "https://github.com/folke/zen-mode.nvim" },
+	{ src = "https://github.com/akinsho/toggleterm.nvim" },
+	{ src = "https://github.com/m4xshen/hardtime.nvim" },
+	{ src = "https://github.com/akinsho/git-conflict.nvim" },
+	{ src = "https://github.com/nvim-tree/nvim-tree.lua" },
+	{ src = "https://github.com/barrett-ruth/live-server.nvim" },
+	{ src = "https://github.com/windwp/nvim-autopairs" },
+	{ src = "https://github.com/tris203/precognition.nvim" },
+	{ src = "https://github.com/ThePrimeagen/vim-be-good" },
+	{ src = "https://github.com/sphamba/smear-cursor.nvim" },
+	{ src = "https://github.com/akinsho/bufferline.nvim" },
+	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
+	{ src = 'https://github.com/leath-dub/snipe.nvim' },
+	{ src = "https://github.com/Lachignol/time-bomb.nvim" },
+	{ src = "https://github.com/echasnovski/mini.clue" },
+	{ src = "https://github.com/echasnovski/mini.pick" },
+	{ src = "https://github.com/nvim-mini/mini.cmdline" },
+	{ src = "https://github.com/nvim-mini/mini.starter" },
+	{ src = "https://github.com/nvim-mini/mini.extra" },
+	{ src = "https://github.com/dimtion/guttermarks.nvim" },
+	{ src = "https://github.com/echasnovski/mini.surround" },
+	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
+	{ src = "https://github.com/f-person/git-blame.nvim" },
+	{ src = "https://github.com/christoomey/vim-tmux-navigator" },
 
 
 
-    -- Decommenter pour test lua
-    -- { src = "https://github.com/nvim-mini/mini.test" },
+	-- Decommenter pour test lua
+	-- { src = "https://github.com/nvim-mini/mini.test" },
 
-    -- Decommenter pour typst
-    -- { src = "https://github.com/chomosuke/typst-preview.nvim" },
+	-- Decommenter pour typst
+	-- { src = "https://github.com/chomosuke/typst-preview.nvim" },
 
-    -- Decommenter pour dactilo
-    -- { src = "https://github.com/nvzone/typr" },
-    -- { src = "https://github.com/nvzone/volt" },
+	-- Decommenter pour dactilo
+	-- { src = "https://github.com/nvzone/typr" },
+	-- { src = "https://github.com/nvzone/volt" },
 
-    -- IA
-    -- { src = "https://github.com/github/copilot.vim.git" },
+	-- IA
+	-- { src = "https://github.com/github/copilot.vim.git" },
 
 
 
@@ -75,6 +76,7 @@ require("plugins.plugin_configs.guttermarks")
 require("plugins.plugin_configs.nvim-tree")
 require("plugins.plugin_configs.mini_pick")
 require("plugins.plugin_configs.mini_extra")
+require("plugins.plugin_configs.mini_surround")
 require("plugins.plugin_configs.render-markdown")
 require("plugins.plugin_configs.git-blame")
 require("plugins.plugin_configs.time-bomb")
