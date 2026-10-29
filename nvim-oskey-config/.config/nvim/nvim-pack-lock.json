@@ -4,6 +4,10 @@
       "rev": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
       "src": "https://github.com/akinsho/bufferline.nvim"
     },
+    "cyberdream.nvim": {
+      "rev": "642c55ad2225f9f4809905918121b2c6d252ad58",
+      "src": "https://github.com/scottmckendry/cyberdream.nvim"
+    },
     "friendly-snippets": {
       "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
       "src": "https://github.com/rafamadriz/friendly-snippets"
@@ -44,6 +48,10 @@
       "rev": "12ddd182d9efbdc848b540f16484a583d52da0fb",
       "src": "https://github.com/mason-org/mason.nvim"
     },
+    "matrix-nvim": {
+      "rev": "5fafe6b440d08c1070e3c4c4cb9d648436d5d867",
+      "src": "https://github.com/iruzo/matrix-nvim"
+    },
     "mini.clue": {
       "rev": "43bd6cf1c3ccdea46d403c32dbc4629fa6afa09d",
       "src": "https://github.com/echasnovski/mini.clue"
@@ -71,6 +79,10 @@
     "mini.starter": {
       "rev": "7bdc9decc8b623f245c1e42a64bc41e61d574c5e",
       "src": "https://github.com/nvim-mini/mini.starter"
+    },
+    "mini.surround": {
+      "rev": "5357f00aca51a3b43e7775901b1ad9699f8c2678",
+      "src": "https://github.com/echasnovski/mini.surround"
     },
     "nvim-autopairs": {
       "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
